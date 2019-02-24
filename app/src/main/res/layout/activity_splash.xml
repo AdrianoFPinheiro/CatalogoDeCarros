@@ -19,5 +19,5 @@ tools:context=".SplashActivity">
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/agenda" />
+            app:srcCompat="@drawable/logo_agenda" />
 </android.support.constraint.ConstraintLayout>
