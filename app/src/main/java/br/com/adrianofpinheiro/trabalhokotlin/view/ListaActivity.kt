@@ -1,5 +1,6 @@
 package br.com.adrianofpinheiro.trabalhokotlin.view
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import br.com.adrianofpinheiro.trabalhokotlin.R
@@ -7,12 +8,13 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import br.com.adrianofpinheiro.trabalhokotlin.adapter.ContatoAdapter
 import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
-import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.activity_lista.*
 
-class ListActivity : AppCompatActivity() {
+class ListaActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+        setContentView(R.layout.activity_lista)
         rvMeusContatos.adapter = ContatoAdapter(contatos(), this, {
             Log.i("TAG", "Meu CONTATO")
         })
@@ -27,6 +29,10 @@ class ListActivity : AppCompatActivity() {
 //Lista na vertical
         val layoutManager = LinearLayoutManager(this)
         rvMeusContatos.layoutManager = layoutManager
+
+       btCadastrar.setOnClickListener{ val intent = Intent(this, CadastroActivity::class.java)
+                                        startActivity(intent)}
+
     }
 
     private fun contatos(): List<Contato> {
@@ -38,4 +44,6 @@ class ListActivity : AppCompatActivity() {
                "Av Paulita, 1100"))
 
     }
+
+
 }

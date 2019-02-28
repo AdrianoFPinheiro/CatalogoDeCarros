@@ -58,8 +58,7 @@ dependencies {
     //RecyclerView
     implementation "com.android.support:recyclerview-v7:$recyclerview_version"
     implementation "com.android.support:cardview-v7:$recyclerview_version"
+
+    //FloatingActionMenu
+    implementation 'com.github.clans:fab:1.6.4'
 }
-
-
-
-
