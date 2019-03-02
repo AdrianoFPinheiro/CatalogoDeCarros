@@ -8,15 +8,15 @@ import br.com.adrianofpinheiro.trabalhokotlin.R
 import br.com.albertlopes.pokempow.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_sing_up.*
+import kotlinx.android.synthetic.main.activity_criar_conta.*
 
-class SignUpActivity : AppCompatActivity() {
+class CriarContaActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sing_up)
+        setContentView(R.layout.activity_criar_conta)
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -28,7 +28,7 @@ class SignUpActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     saveInRealTimeDatabase()
                 } else {
-                    Toast.makeText(this@SignUpActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@CriarContaActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }

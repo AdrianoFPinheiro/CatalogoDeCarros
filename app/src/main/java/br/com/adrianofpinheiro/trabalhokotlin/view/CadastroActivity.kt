@@ -25,8 +25,14 @@ class CadastroActivity : AppCompatActivity() {
         })
 
         btMapa.setOnClickListener {
-            val intent = Intent(this, MapaActivity::class.java)
+            val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
+        }
+
+        btCadastrar.setOnClickListener{
+            val intent = Intent(this, ListaActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

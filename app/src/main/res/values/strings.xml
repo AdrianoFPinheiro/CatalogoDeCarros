@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Agenda - Trabalho KT</string>
+    <string name="app_name">Agenda - Kotlin</string>
+    <string name="nome">Nome</string>
+    <string name="endereco">Endereço</string>
+    <string name="telefone">Telefone</string>
+    <string name="login">Login</string>
+    <string name="password">Senha</string>
+    <string name="criar_conta">Ainda não tem conta? Crie uma</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

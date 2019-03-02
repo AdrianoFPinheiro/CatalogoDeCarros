@@ -15,23 +15,19 @@ class ListaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista)
+
+        //conteudo da lista
         rvMeusContatos.adapter = ContatoAdapter(contatos(), this, {
             Log.i("TAG", "Meu CONTATO")
         })
-//Grid
-//val layoutManager = GridLayoutManager(this, 2)
-//Grade escalonável
-//val layoutManager = StaggeredGridLayoutManager(
-//2, StaggeredGridLayoutManager.VERTICAL)
-//Lista na horizontal
-//val layoutManager = LinearLayoutManager(this,
-//        LinearLayoutManager.HORIZONTAL, false)
-//Lista na vertical
+
         val layoutManager = LinearLayoutManager(this)
         rvMeusContatos.layoutManager = layoutManager
 
-       btCadastrar.setOnClickListener{ val intent = Intent(this, CadastroActivity::class.java)
-                                        startActivity(intent)}
+        btCadastrar.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -41,7 +37,9 @@ class ListaActivity : AppCompatActivity() {
                 R.drawable.usuario_logo,
                 "Fulano de tal",
                 1112344321,
-               "Av Paulita, 1100"))
+                "Av Paulita, 1100"
+            )
+        )
 
     }
 

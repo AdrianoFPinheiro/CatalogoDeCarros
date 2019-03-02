@@ -9,6 +9,7 @@ import br.com.adrianofpinheiro.trabalhokotlin.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         if (mAuth.currentUser != null) {
-            goToHome()
+            vaiParaLista()
         }
 
         btLogin.setOnClickListener {
@@ -31,19 +32,19 @@ class LoginActivity : AppCompatActivity() {
                 inputLoginPassword.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    goToHome()
+                    vaiParaLista()
                 } else {
-                    Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
 
-        btSignup.setOnClickListener {
-            startActivityForResult(Intent(this, SignUpActivity::class.java), newUserRequestCode)
+        btCriarConta.setOnClickListener {
+            startActivityForResult(Intent(this, CriarContaActivity::class.java), newUserRequestCode)
         }
     }
 
-    private fun goToHome() {
+    private fun vaiParaLista() {
         val intent = Intent(this, ListaActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
@@ -56,4 +57,6 @@ class LoginActivity : AppCompatActivity() {
             inputLoginEmail.setText(data?.getStringExtra("email"))
         }
     }
+
 }
+
