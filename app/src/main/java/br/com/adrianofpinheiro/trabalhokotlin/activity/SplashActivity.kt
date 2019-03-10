@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin
+package br.com.adrianofpinheiro.trabalhokotlin.activity
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
-import br.com.adrianofpinheiro.trabalhokotlin.view.LoginActivity
+import br.com.adrianofpinheiro.trabalhokotlin.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {

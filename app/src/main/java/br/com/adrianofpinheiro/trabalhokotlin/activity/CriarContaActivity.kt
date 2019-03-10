@@ -1,14 +1,15 @@
-package br.com.adrianofpinheiro.trabalhokotlin.view
+package br.com.adrianofpinheiro.trabalhokotlin.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
-import br.com.albertlopes.pokempow.model.User
+import br.com.adrianofpinheiro.trabalhokotlin.domain.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_criar_conta.*
+
 
 class CriarContaActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class CriarContaActivity : AppCompatActivity() {
     }
 
     private fun saveInRealTimeDatabase() {
-        val user = User(inputEmail.text.toString())
+        val user = Usuario(inputEmail.text.toString())
         FirebaseDatabase.getInstance().getReference("Users")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
             .setValue(user)

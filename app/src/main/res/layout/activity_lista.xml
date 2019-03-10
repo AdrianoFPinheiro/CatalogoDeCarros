@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:fab="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".view.ListaActivity"
-                xmlns:tools="http://schemas.android.com/tools">
+<android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        tools:context=".activity.ListaActivity"
+        tools:openDrawer="start">
 
-    <LinearLayout
+    <include
+            layout="@layout/app_bar_lista"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"/>
 
-
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvMeusContatos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/contato_item"/>
-
-    </LinearLayout>
+    <include layout="@layout/content_lista"/>
 
     <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/lista_menu_adiciona"
@@ -48,8 +46,17 @@
                 fab:fab_colorPressed="#E8004A"
                 fab:fab_colorRipple="#C20024"
                 fab:fab_label="Cadastrar"
-                fab:fab_size="mini" />
+                fab:fab_size="mini"/>
 
     </com.github.clans.fab.FloatingActionMenu>
 
-</RelativeLayout>
+    <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_lista"
+            app:menu="@menu/activity_lista2_drawer"/>
+
+</android.support.v4.widget.DrawerLayout>

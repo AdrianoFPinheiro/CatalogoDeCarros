@@ -1,6 +1,7 @@
-package br.com.adrianofpinheiro.trabalhokotlin.view
+package br.com.adrianofpinheiro.trabalhokotlin.activity
 
 import android.app.Activity
+import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
@@ -12,13 +13,23 @@ import android.support.v4.app.ActivityCompat
 import android.view.View
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
+import br.com.adrianofpinheiro.trabalhokotlin.domain.ResponseStatus
 import kotlinx.android.synthetic.main.activity_cadastro.*
 
 class CadastroActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
+
+
+        btCadastrar.setOnClickListener{
+            val intent = Intent(this, ListaOLDActivity::class.java)
+
+            startActivity(intent)
+            finish()
+        }
 
         ivFoto.setOnClickListener(View.OnClickListener {
             verificaPermissao()
@@ -29,12 +40,20 @@ class CadastroActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btCadastrar.setOnClickListener{
-            val intent = Intent(this, ListaActivity::class.java)
-            startActivity(intent)
+    }
+
+
+    private var responseStatusObserver = Observer<ResponseStatus> {
+        if(it?.successo == true) {
+            setResult(Activity.RESULT_OK)
             finish()
+        } else {
+            Toast.makeText(this,
+                it?.mensagem,
+                Toast.LENGTH_SHORT).show()
         }
     }
+
 
     val READIMAGE: Int = 253
     fun verificaPermissao() {

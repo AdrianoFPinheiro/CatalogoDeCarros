@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.view
+package br.com.adrianofpinheiro.trabalhokotlin.activity
 
 import android.app.Activity
 import android.content.Intent
