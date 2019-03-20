@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.adrianofpinheiro.trabalhokotlin.R
-import br.com.adrianofpinheiro.trabalhokotlin.domain.Contato
+import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
 import kotlinx.android.synthetic.main.activity_cadastro.view.*
 import kotlinx.android.synthetic.main.contato_item.view.*
 

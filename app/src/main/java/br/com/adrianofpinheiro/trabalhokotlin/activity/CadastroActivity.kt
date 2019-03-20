@@ -13,7 +13,7 @@ import android.support.v4.app.ActivityCompat
 import android.view.View
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
-import br.com.adrianofpinheiro.trabalhokotlin.domain.ResponseStatus
+import br.com.adrianofpinheiro.trabalhokotlin.api.ResponseStatus
 import kotlinx.android.synthetic.main.activity_cadastro.*
 
 class CadastroActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class CadastroActivity : AppCompatActivity() {
 
 
         btCadastrar.setOnClickListener{
-            val intent = Intent(this, ListaOLDActivity::class.java)
+            val intent = Intent(this, ListaActivity::class.java)
 
             startActivity(intent)
             finish()

@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.domain
+package br.com.adrianofpinheiro.trabalhokotlin.model
 
 data class Contato(
     val id: Int,

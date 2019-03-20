@@ -16,7 +16,7 @@ import android.view.View
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
 import br.com.adrianofpinheiro.trabalhokotlin.adapter.ListaAdapter
-import br.com.adrianofpinheiro.trabalhokotlin.domain.Contato
+import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
 import kotlinx.android.synthetic.main.activity_lista.*
 import kotlinx.android.synthetic.main.app_bar_lista.*
 import kotlinx.android.synthetic.main.content_lista.*

@@ -3,20 +3,22 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        xmlns:fab="http://schemas.android.com/apk/res-auto"
         tools:context=".activity.ListaActivity"
         tools:openDrawer="start">
+
+    <include layout="@layout/content_lista"/>
 
     <include
             layout="@layout/app_bar_lista"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    <include layout="@layout/content_lista"/>
+
 
     <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/lista_menu_adiciona"
@@ -50,6 +52,7 @@
 
     </com.github.clans.fab.FloatingActionMenu>
 
+
     <android.support.design.widget.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"
@@ -57,6 +60,9 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header_lista"
-            app:menu="@menu/activity_lista2_drawer"/>
+            app:menu="@menu/activity_lista_drawer"/>
+
+
+
 
 </android.support.v4.widget.DrawerLayout>

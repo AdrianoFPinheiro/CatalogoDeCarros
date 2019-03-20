@@ -1,5 +1,6 @@
-package br.com.adrianofpinheiro.trabalhokotlin.domain
+package br.com.adrianofpinheiro.trabalhokotlin.api
 
+import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
 import retrofit2.Call
 import retrofit2.http.*
 

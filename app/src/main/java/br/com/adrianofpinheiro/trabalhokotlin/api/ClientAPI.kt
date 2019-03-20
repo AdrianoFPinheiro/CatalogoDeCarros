@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.domain
+package br.com.adrianofpinheiro.trabalhokotlin.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

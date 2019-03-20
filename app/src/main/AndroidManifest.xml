@@ -23,6 +23,12 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
+                android:name=".activity.MainActivity"
+                android:label="@string/title_activity_main">
+
+
+        </activity>
+        <activity
                 android:name=".activity.ListaActivity"
                 android:label="@string/title_activity_lista"
                 android:theme="@style/AppTheme.NoActionBar">
@@ -48,6 +54,7 @@
         <activity
                 android:name=".activity.SplashActivity"
                 android:theme="@style/FullScreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -57,8 +64,6 @@
         <activity android:name=".activity.LoginActivity">
         </activity>
         <activity android:name=".activity.CriarContaActivity">
-        </activity>
-        <activity android:name=".view.ListaOLDActivity">
         </activity>
     </application>
 

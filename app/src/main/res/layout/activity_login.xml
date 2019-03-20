@@ -14,13 +14,13 @@
             android:paddingLeft="24dp"
             android:paddingRight="24dp">
 
-        <ImageView
-                android:id="@+id/ivPerfil"
-                    android:src="@drawable/ic_launcher_background"
-                   android:layout_width="96dp"
-                   android:layout_height="96dp"
-                   android:layout_marginBottom="24dp"
-                   android:layout_gravity="center_horizontal"/>
+        <!--<ImageView-->
+                <!--android:id="@+id/ivPerfil"-->
+                    <!--android:src="@drawable/ic_launcher_background"-->
+                   <!--android:layout_width="96dp"-->
+                   <!--android:layout_height="96dp"-->
+                   <!--android:layout_marginBottom="24dp"-->
+                   <!--android:layout_gravity="center_horizontal"/>-->
 
         <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"

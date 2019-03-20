@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
-import br.com.adrianofpinheiro.trabalhokotlin.domain.Usuario
+import br.com.adrianofpinheiro.trabalhokotlin.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_criar_conta.*
