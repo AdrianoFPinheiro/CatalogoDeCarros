@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.adapter
+package br.com.adrianofpinheiro.trabalhokotlin.views.adapter
 
 import android.content.Context
 import android.support.v4.content.ContextCompat

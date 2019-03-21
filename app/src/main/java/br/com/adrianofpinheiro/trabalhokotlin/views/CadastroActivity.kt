@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.activity
+package br.com.adrianofpinheiro.trabalhokotlin.views
 
 import android.app.Activity
 import android.arch.lifecycle.Observer

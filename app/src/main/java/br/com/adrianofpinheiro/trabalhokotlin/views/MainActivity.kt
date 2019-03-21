@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.activity
+package br.com.adrianofpinheiro.trabalhokotlin.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.FrameLayout
 import br.com.adrianofpinheiro.trabalhokotlin.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,12 +16,14 @@ class MainActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
+            R.id.navigation_lista -> {
 
                 val fragment = FragmentHome.Companion.newInstance()
                 addFragment(fragment)
-
+                val intent = Intent(this@MainActivity, ListaActivity::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
+
             }
             R.id.navigation_sobre -> {
                 val fragment = FragmentSobre()

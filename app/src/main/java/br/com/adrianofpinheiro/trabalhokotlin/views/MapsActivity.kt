@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.activity
+package br.com.adrianofpinheiro.trabalhokotlin.views
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

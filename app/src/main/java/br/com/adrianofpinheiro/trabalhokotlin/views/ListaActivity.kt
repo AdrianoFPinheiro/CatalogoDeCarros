@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.activity
+package br.com.adrianofpinheiro.trabalhokotlin.views
 
 import android.app.Activity
 import android.arch.lifecycle.Observer
@@ -15,7 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
-import br.com.adrianofpinheiro.trabalhokotlin.adapter.ListaAdapter
+import br.com.adrianofpinheiro.trabalhokotlin.views.adapter.ListaAdapter
 import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
 import kotlinx.android.synthetic.main.activity_lista.*
 import kotlinx.android.synthetic.main.app_bar_lista.*
@@ -29,7 +29,7 @@ class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
     private var adapter: ListaAdapter? = null
 
-    val FORMULARIO_REQUEST_CODE = 1
+    val CADASTRO_REQUEST_CODE = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,14 +39,13 @@ class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
 
         btCadastrar.setOnClickListener { view ->
-            val formularioIntent = Intent(
+            val cadastroIntent = Intent(
                 this,
                 CadastroActivity::class.java
             )
-
             startActivityForResult(
-                formularioIntent,
-                FORMULARIO_REQUEST_CODE
+                cadastroIntent,
+                CADASTRO_REQUEST_CODE
             )
         }
             fab.setOnClickListener { view ->
@@ -78,15 +77,15 @@ class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             return true
         }
 
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            // Handle action bar item clicks here. The action bar will
-            // automatically handle clicks on the Home/Up button, so long
-            // as you specify a parent activity in AndroidManifest.xml.
-            when (item.itemId) {
-                R.id.action_settings -> return true
-                else -> return super.onOptionsItemSelected(item)
-            }
-        }
+//        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//            // Handle action bar item clicks here. The action bar will
+//            // automatically handle clicks on the Home/Up button, so long
+//            // as you specify a parent activity in AndroidManifest.xml.
+//            when (item.itemId) {
+//                R.id.action_settings -> return true
+//                else -> return super.onOptionsItemSelected(item)
+//            }
+//        }
 
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
             // Handle navigation view item clicks here.
@@ -136,19 +135,19 @@ class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             rvMeusContatos.layoutManager = LinearLayoutManager(this)
         }
 
-//        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//            // Handle action bar item clicks here. The action bar will
-//            // automatically handle clicks on the Home/Up button, so long
-//            // as you specify a parent activity in AndroidManifest.xml.
-//        return when (item.itemId) {
-//            R.id.action_settings -> {
-//                startActivityForResult(Intent(this, CadastroActivity::class.java), 1)
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//            return true
-//        }
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            // Handle action bar item clicks here. The action bar will
+            // automatically handle clicks on the Home/Up button, so long
+            // as you specify a parent activity in AndroidManifest.xml.
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                startActivityForResult(Intent(this, CadastroActivity::class.java), 1)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+            return true
+        }
 
 
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -159,7 +158,7 @@ class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 mainViewModel.buscarTodos()
             }*/
             when (requestCode) {
-                FORMULARIO_REQUEST_CODE -> {
+                CADASTRO_REQUEST_CODE -> {
                     when (resultCode) {
                         Activity.RESULT_OK -> {
                             Toast.makeText(
@@ -181,18 +180,17 @@ class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         }
 
 
-//    private fun contatos(): List<Contato> {
-//        return listOf(
-//            Contato(
-//                R.drawable.usuario_logo,
-//                "Fulano de tal",
-//                "222222222",
-//                "Av Paulita, 1100",
-//                "Foto do contato"
-//            )
-//        )
-//
-//    }
+    private fun contatos(): List<Contato> {
+        return listOf(
+            Contato(
+                R.drawable.usuario_logo,
+                "Fulano de tal",
+                "222222222",
+                "Av Paulita, 1100"
+            )
+        )
+
+    }
 
 
 
