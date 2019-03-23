@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
 
                 val fragment = FragmentHome.Companion.newInstance()
                 addFragment(fragment)
-                val intent = Intent(this@MainActivity, ListaActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this@MainActivity, ListaActivity::class.java)
+//                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
 
             }

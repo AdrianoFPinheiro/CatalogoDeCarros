@@ -24,12 +24,12 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro)
 
 
-        btCadastrar.setOnClickListener{
-            val intent = Intent(this, ListaActivity::class.java)
-
-            startActivity(intent)
-            finish()
-        }
+//        btCadastrar.setOnClickListener{
+//            val intent = Intent(this, ListaActivity::class.java)
+//
+//            startActivity(intent)
+//            finish()
+//        }
 
         ivFoto.setOnClickListener(View.OnClickListener {
             verificaPermissao()
