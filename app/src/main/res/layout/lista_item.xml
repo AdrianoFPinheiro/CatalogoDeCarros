@@ -35,15 +35,15 @@
                     android:textColor="#AAA"
                     android:textSize="12sp"
                     tools:text="XX-XXXX-XXXX" />
-            <TextView
-                    android:id="@+id/tvEndereco"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:ellipsize="end"
-                    android:maxLines="3"
-                    android:textSize="14sp"
-                    tools:text="Endereço" />
+            <!--<TextView-->
+                    <!--android:id="@+id/tvEndereco"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:maxLines="3"-->
+                    <!--android:textSize="14sp"-->
+                    <!--tools:text="Endereço" />-->
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

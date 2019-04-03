@@ -1,35 +1,84 @@
-//package br.com.adrianofpinheiro.trabalhokotlin.views
-//
-//import android.app.Activity
-//import android.arch.lifecycle.Observer
-//import android.content.Intent
-//import android.os.Bundle
-//import android.support.design.widget.Snackbar
-//import android.support.design.widget.NavigationView
-//import android.support.v4.view.GravityCompat
-//import android.support.v7.app.ActionBarDrawerToggle
-//import android.support.v7.app.AppCompatActivity
-//import android.support.v7.widget.LinearLayoutManager
-//import android.view.Menu
-//import android.view.MenuItem
-//import android.view.View
-//import android.widget.Toast
-//import br.com.adrianofpinheiro.trabalhokotlin.R
-//import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
-//import br.com.adrianofpinheiro.trabalhokotlin.model.Movie
-//import br.com.adrianofpinheiro.trabalhokotlin.views.adapter.ListaAdapter
-//import kotlinx.android.synthetic.main.activity_lista.*
-//import kotlinx.android.synthetic.main.app_bar_lista.*
-//import kotlinx.android.synthetic.main.content_lista.*
-//
-//
-//import kotlinx.android.synthetic.main.loading.*
-//
-//class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-//
-//
-//    private var adapter: ListaAdapter? = null
-//
+package br.com.adrianofpinheiro.trabalhokotlin.views
+
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
+import android.os.AsyncTask
+import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.view.MenuItem
+import android.widget.EditText
+import br.com.adrianofpinheiro.trabalhokotlin.ListaContatoViewModel
+import br.com.adrianofpinheiro.trabalhokotlin.R
+import br.com.adrianofpinheiro.trabalhokotlin.dao.BancoDeDados
+import br.com.adrianofpinheiro.trabalhokotlin.model.Contato
+import br.com.adrianofpinheiro.trabalhokotlin.ui.NovoContatoDialog
+import br.com.adrianofpinheiro.trabalhokotlin.ui.adapter.ListaAdapter
+import kotlinx.android.synthetic.main.activity_lista.*
+import kotlinx.android.synthetic.main.app_bar_lista.*
+import kotlinx.android.synthetic.main.content_lista.*
+
+
+class ListaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private var adapter: ListaAdapter? = null
+    private var contatos: List<Contato> = listOf()
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        setContentView(R.layout.activity_lista)
+        setSupportActionBar(toolbar)
+        lista_menu_adiciona.setOnClickListener { view ->
+            val dialog = NovoContatoDialog()
+            dialog.show(fragmentManager, "CriarContato")
+        }
+        mostrarDados()
+        recycler_view.layoutManager = LinearLayoutManager(this)
+        adapter = ListaAdapter(contatos!!)
+        recycler_view.adapter = adapter
+        val db = BancoDeDados.getDatabase(applicationContext)
+        val contato = Contato(
+            etNome.text.toString(),
+            etTelefone.text.toString()
+        )
+        if (contato.nome != "")
+            InsertAsyncTask(db!!).execute(contato)
+
+    }
+
+    private inner class InsertAsyncTask internal
+    constructor(appDatabase: BancoDeDados) : AsyncTask<Contato, Void, String>() {
+        private val db: BancoDeDados = appDatabase
+        override fun doInBackground(vararg params: Contato): String {
+            db.contatoDAO().inserir(params[0])
+            return ""
+        }
+    }
+
+    private fun mostrarDados() {
+        //será utilizado
+        //get() — indica o ViewModel que será utilizado.
+        ViewModelProviders.of(this)
+            .get(ListaContatoViewModel::class.java)
+            .contatos
+            .observe(this, Observer<List<Contato>> { contatos ->
+                adapter?.setList(contatos!!)
+                recycler_view.adapter.notifyDataSetChanged()
+            })
+    }
+
+    private lateinit var etNome: EditText
+    private lateinit var etTelefone: EditText
+
+}
+
 //    val CADASTRO_REQUEST_CODE = 1
 //
 //
@@ -193,6 +242,6 @@
 //
 //    }
 //
-//
-//
-//}
+
+
+

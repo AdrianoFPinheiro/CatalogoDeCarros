@@ -1,47 +1,21 @@
-package br.com.adrianofpinheiro.trabalhokotlin.views
+package br.com.adrianofpinheiro.trabalhokotlin.util
 
 import android.app.Activity
 import android.arch.lifecycle.Observer
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
-import android.view.View
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import br.com.adrianofpinheiro.trabalhokotlin.R
 import br.com.adrianofpinheiro.trabalhokotlin.api.ResponseStatus
-import kotlinx.android.synthetic.main.activity_cadastro.*
+import br.com.adrianofpinheiro.trabalhokotlin.ui.FragmentHome
+import kotlinx.android.synthetic.main.fragment_home.*
 
-class CadastroActivity : AppCompatActivity() {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
-
-
-//        btCadastrar.setOnClickListener{
-//            val intent = Intent(this, ListaActivity::class.java)
-//
-//            startActivity(intent)
-//            finish()
-//        }
-
-        ivFoto.setOnClickListener(View.OnClickListener {
-            verificaPermissao()
-        })
-
-        btMapa.setOnClickListener {
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
-        }
-
-    }
-
+class CarregaImagem : AppCompatActivity(){
 
     private var responseStatusObserver = Observer<ResponseStatus> {
         if(it?.successo == true) {
@@ -83,15 +57,13 @@ class CadastroActivity : AppCompatActivity() {
             }
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
-
-
     }
 
     val ESCOLHE_IMAGEM_CODE = 123
     fun carregaImagem() {
         var intent = Intent(
             Intent.ACTION_PICK,
-            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         )
         startActivityForResult(intent, ESCOLHE_IMAGEM_CODE)
     }
@@ -109,19 +81,10 @@ class CadastroActivity : AppCompatActivity() {
             val columnIndex = cursor.getColumnIndex(caminhoDoArquivo[0])
             val caminhoDaImagem = cursor.getString(columnIndex)
             cursor.close()
+            //Seta a imagem
             ivFoto.setImageBitmap(BitmapFactory.decodeFile(caminhoDaImagem))
         }
     }
 
 
 }
-
-
-
-
-
-
-
-
-
-

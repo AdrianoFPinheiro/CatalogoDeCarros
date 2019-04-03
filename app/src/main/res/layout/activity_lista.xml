@@ -8,15 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".views.ListaActivity"
+        tools:context=".ui.MainActivity"
         tools:openDrawer="start">
-
-    <include layout="@layout/content_lista"/>
-
-    <include
-            layout="@layout/app_bar_lista"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
 
 
@@ -30,26 +23,13 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             fab:menu_backgroundColor="#ccffffff"
-            fab:menu_colorNormal="#367C25"
-            fab:menu_colorPressed="#266817"
-            fab:menu_colorRipple="#195b09"
+            fab:menu_colorNormal="@color/colorPrimary"
+            fab:menu_colorPressed="@color/colorPrimaryDark"
+            fab:menu_colorRipple="@color/cardview_dark_background"
             fab:menu_labels_colorNormal="#fff"
             fab:menu_labels_ellipsize="end"
             fab:menu_labels_singleLine="true"
             fab:menu_labels_textColor="#000">
-
-
-        <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/btCadastrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_bottom_left_white_24dp"
-                fab:fab_colorNormal="#B22318"
-                fab:fab_colorPressed="#E8004A"
-                fab:fab_colorRipple="#C20024"
-                fab:fab_label="Cadastrar"
-                fab:fab_size="mini"/>
-
     </com.github.clans.fab.FloatingActionMenu>
 
 

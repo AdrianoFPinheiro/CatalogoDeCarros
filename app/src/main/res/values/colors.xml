@@ -7,5 +7,6 @@
     <color name="colorNavigation">#F5F5F6</color>
     <color name="colorNavigationItemDefault">#777777</color>
     <color name="colorNavigationItemChecked">#FFFFFF</color>
-
+    <color name="colorSuccess">#079ca7</color>
+    <color name="colorUnSuccess">#fd2b01</color>
 </resources>

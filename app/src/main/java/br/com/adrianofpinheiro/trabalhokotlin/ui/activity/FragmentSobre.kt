@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.trabalhokotlin.views
+package br.com.adrianofpinheiro.trabalhokotlin.ui
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

@@ -22,11 +22,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+
         <activity
-                android:name=".views.MainActivity"
+                android:name=".ui.MainActivity"
                 android:label="@string/title_activity_main">
-
-
         </activity>
         <activity
                 android:name=".views.ListaActivity"
@@ -46,24 +45,23 @@
                 android:value="@string/google_maps_key"/>
 
         <activity
-                android:name=".views.MapsActivity"
+                android:name=".ui.MapsActivity"
                 android:label="@string/title_activity_maps">
         </activity>
-        <activity android:name=".views.CadastroActivity">
+        <activity android:name=".ui.CadastroActivity">
         </activity>
         <activity
-                android:name=".views.SplashActivity"
+                android:name=".ui.activity.SplashActivity"
                 android:theme="@style/FullScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".views.LoginActivity">
+        <activity android:name=".ui.LoginActivity">
         </activity>
-        <activity android:name=".views.CriarContaActivity">
+        <activity android:name=".ui.CriarContaActivity">
         </activity>
     </application>
 
