@@ -1,11 +1,11 @@
-Aplicativo de carros feito em Kotlin
+<b>Aplicativo de carros feito em Kotlin</b>
 
 Configurações;
 kotlin_version = '1.3.0';
 gradle:3.3.2;
 
 
-Tecnologias utilizadas
+<b>Tecnologias utilizadas</b>
 
 Mapas e Localização;<br>
 Picasso para carregar imagens;<br>
