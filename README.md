@@ -7,7 +7,7 @@ gradle:3.3.2;
 
 Tecnologias utilizadas
 
-Mapas e Localização;
+Mapas e Localização;<br>
 Picasso para carregar imagens;
 okhttp3 para requisição HTTP;
 GSON para converter JSON;
