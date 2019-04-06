@@ -63,6 +63,7 @@
                   android:layout_marginTop="32dp"
                   android:text="@string/criar_conta"
                   android:gravity="center"
+                  android:textStyle="bold"
                   android:textSize="16dp"/>
 
 </LinearLayout>

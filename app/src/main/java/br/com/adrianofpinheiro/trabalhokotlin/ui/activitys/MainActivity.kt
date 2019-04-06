@@ -20,9 +20,7 @@ import br.com.adrianofpinheiro.trabalhokotlin.extensions.toast
 import br.com.adrianofpinheiro.trabalhokotlin.ui.activitys.dialogs.SobreActivity
 import br.com.adrianofpinheiro.trabalhokotlin.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
-
 import kotlinx.android.synthetic.main.activity_main.*
-
 import com.maxcruz.reactivePermissions.entity.Permission
 import com.maxcruz.reactivePermissions.ReactivePermissions
 import org.jetbrains.anko.*
