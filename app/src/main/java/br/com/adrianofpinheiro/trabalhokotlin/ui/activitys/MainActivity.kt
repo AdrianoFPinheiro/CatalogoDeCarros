@@ -1,5 +1,7 @@
 package br.com.adrianofpinheiro.trabalhokotlin.ui.activitys
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -21,10 +23,15 @@ import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-import org.jetbrains.anko.startActivity
+import com.maxcruz.reactivePermissions.entity.Permission
+import com.maxcruz.reactivePermissions.ReactivePermissions
+import org.jetbrains.anko.*
 
 
 class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedListener {
+
+    val REQUEST_CODE = 554
+    val reacPermissions = ReactivePermissions(this, REQUEST_CODE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,8 +99,13 @@ class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedLis
             R.id.nav_item_carros_luxo -> {
                 startActivity<CarrosActivity>("tipo" to TipoCarro.luxo)
             }
-            R.id.nav_item_site_livro -> {
-                startActivity<SiteLivroActivity>()
+
+            R.id.nav_item_ligar_contato -> {
+                makeCallPhone()
+            }
+
+            R.id.nav_item_compartilhar -> {
+                share("Testando Compartilhamento do APP", "FIAP[2019]")
             }
             R.id.nav_item_about -> {
                 val intent = Intent(this@MainActivity, SobreActivity::class.java)
@@ -101,8 +113,17 @@ class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedLis
             }
 
             R.id.nav_item_exit -> {
-                FirebaseAuth.getInstance().signOut()
-                finish()
+                    alert(R.string.msg_confirma_logout, R.string.app_name) {
+                        positiveButton(R.string.sim) {
+                            // Confirmou em deslogar
+                            FirebaseAuth.getInstance().signOut()
+                            finish()
+                        }
+                        negativeButton(R.string.nao) {
+                            // Não confirmou...
+                        }
+                    }.show()
+
             }
         }
         // Fecha o menu depois de tratar o evento
@@ -110,5 +131,42 @@ class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedLis
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray) {
+
+        if (requestCode == REQUEST_CODE){
+            reacPermissions.receive(permissions, grantResults)
+        }
+    }
+
+    @SuppressLint("CheckResult")
+    private fun makeCallPhone(){
+        val phone = Permission(
+            Manifest.permission.CALL_PHONE,
+            R.string.explicacao_permissao,
+            true
+        )
+
+        val permissions = listOf( phone )
+
+        reacPermissions.observeResultPermissions().subscribe{
+                event ->
+            if (event.first == Manifest.permission.CALL_PHONE
+                && event.second) {
+
+                makeCall("0800 724 8154")
+            }
+            else if (event.first == Manifest.permission.SEND_SMS
+                && event.second) {
+                sendSMS("0800 724 8154")
+            }
+        }
+
+        reacPermissions.evaluate(permissions)
+    }
+
 
 }

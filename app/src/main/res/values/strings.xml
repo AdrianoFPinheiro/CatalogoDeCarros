@@ -55,6 +55,7 @@ Versao %s<br><br>
     <string name="msg_carro_excluido">Carro excluído com sucesso</string>
     <string name="msg_error_form_nome">Nome é obrigatório</string>
     <string name="msg_error_form_desc">Descrição é obrigatório</string>
+    <string name="msg_confirma_logout">Deseja deslogar do aplicativo?</string>
 
     <!-- N -->
     <string name="nao">Não</string>
@@ -84,6 +85,8 @@ Versao %s<br><br>
 
     <!-- T -->
     <string name="tipo">Tipo</string>
+    <string name="ligarContato">Contato</string>
+    <string name="compartilhar">Compartilhar</string>
 
 
 </resources>

@@ -2,4 +2,9 @@
 <resources>
 	<!-- Chave copiada do Google API Console -->
 	<string name="API_KEY">AIzaSyDFzXJH5fRM-6UeKEdlIKbg1iG_p4UI9tA</string>
+
+	<string name="explicacao_permissao">
+		Para que seja possível realizar a ligação telefônica partindo do aplicativo,
+		libere a permissão de ligação.
+	</string>
 </resources>

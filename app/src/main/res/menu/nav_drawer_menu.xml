@@ -25,11 +25,17 @@
                 android:checked="true"
                 android:icon="@drawable/ic_drawer_carro"
                 android:title="@string/luxo" />
-        <!-- WebView com informações sobre o livro -->
+
         <item
-                android:id="@+id/nav_item_site_livro"
-                android:icon="@drawable/ic_drawer_site_livro"
-                android:title="@string/site_do_livro" />
+                android:id="@+id/nav_item_ligar_contato"
+                android:icon="@drawable/ic_call_black"
+                android:title="@string/ligarContato" />
+
+        <item
+                android:id="@+id/nav_item_compartilhar"
+                android:icon="@drawable/ic_share_black"
+                android:title="@string/compartilhar" />
+
         <!-- Sobre -->
         <item
                 android:id="@+id/nav_item_about"
