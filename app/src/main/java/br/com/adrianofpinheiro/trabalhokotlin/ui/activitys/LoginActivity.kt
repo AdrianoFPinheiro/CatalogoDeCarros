@@ -23,10 +23,12 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
+        //botão recebe foco
+        btLogin.requestFocus()
         if (mAuth.currentUser != null) {
             vaiParaLista()
         }
-
+        //tenta logar
         btLogin.setOnClickListener {
             mAuth.signInWithEmailAndPassword(
                 inputLoginEmail.text.toString(),
@@ -40,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        //vai para "Criar Usuário"
         btCriarConta.setOnClickListener {
             startActivityForResult(Intent(this, CriarContaActivity::class.java), newUserRequestCode)
         }

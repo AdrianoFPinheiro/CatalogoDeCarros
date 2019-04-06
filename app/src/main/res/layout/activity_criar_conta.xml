@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="New trainer"
+                android:text="Novo usuário"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
