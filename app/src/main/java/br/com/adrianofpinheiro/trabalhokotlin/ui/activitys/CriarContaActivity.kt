@@ -43,7 +43,7 @@ class CriarContaActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
-                    val returnIntent = Intent()
+                    val returnIntent = Intent(this@CriarContaActivity, LoginActivity::class.java)
                     returnIntent.putExtra("email", inputEmail.text.toString())
                     setResult(RESULT_OK, returnIntent)
                     finish()

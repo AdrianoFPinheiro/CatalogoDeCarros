@@ -17,6 +17,7 @@ import br.com.adrianofpinheiro.trabalhokotlin.adapter.TabsAdapter
 import br.com.adrianofpinheiro.trabalhokotlin.domain.TipoCarro
 import br.com.adrianofpinheiro.trabalhokotlin.extensions.setupToolbar
 import br.com.adrianofpinheiro.trabalhokotlin.extensions.toast
+import br.com.adrianofpinheiro.trabalhokotlin.ui.LoginActivity
 import br.com.adrianofpinheiro.trabalhokotlin.ui.activitys.dialogs.SobreActivity
 import br.com.adrianofpinheiro.trabalhokotlin.utils.Prefs
 import com.google.firebase.auth.FirebaseAuth
@@ -115,6 +116,8 @@ class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedLis
                         positiveButton(R.string.sim) {
                             // Confirmou em deslogar
                             FirebaseAuth.getInstance().signOut()
+                            val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                            startActivity(intent)
                             finish()
                         }
                         negativeButton(R.string.nao) {
