@@ -103,7 +103,7 @@ class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedLis
             }
 
             R.id.nav_item_compartilhar -> {
-                share("Testando Compartilhamento do APP", "FIAP[2019]")
+                share("https://play.google.com/store/apps/details?id=br.com.adrianofpinheiro.trabalhokotlin", "FIAP[2019]")
             }
             R.id.nav_item_about -> {
                 val intent = Intent(this@MainActivity, SobreActivity::class.java)

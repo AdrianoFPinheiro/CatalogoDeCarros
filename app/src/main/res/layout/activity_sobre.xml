@@ -20,24 +20,23 @@
 
     <TextView
             style="@style/TextoSobre"
-            android:text="Adriano Ferreira Pinheiro - RM 330504"
+            android:text="@string/nome_adriano"
+    />
+
+    <TextView
+            style="@style/TextoSobre"
+            android:text="@string/nome_artur"
 
     />
 
     <TextView
             style="@style/TextoSobre"
-            android:text="Artur Ramos Ribeiro do Valle- RM 331611"
-
+            android:text="@string/nome_kaique"
     />
 
     <TextView
             style="@style/TextoSobre"
-            android:text="Kaique da Costa Coqueiro - RM 331822"
-    />
-
-    <TextView
-            style="@style/TextoSobre"
-            android:text="Versão - 1.0"
+            android:text="@string/versao_app"
             android:layout_marginTop="50dp"
 
     />

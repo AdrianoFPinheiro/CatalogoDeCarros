@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Carros - Kotlin</string>
+    <string name="app_name">Carros</string>
     <!-- A -->
     <string name="action_about">Sobre</string>
     <string name="action_settings">Settings</string>
@@ -7,13 +7,7 @@
     <string name="action_salvar">Salvar</string>
     <string name="action_deletar">Deletar</string>
     <string name="about_dialog_text">
-        <![CDATA[
-<b>Aplicativo dos Carros</b><br>
-Versao %s<br><br>
-<a href="http://www.livroandroid.com.br">http://livroandroid.com.br</a><br><br><br><br>
-<a >Aplicativo desenvolvido baseado no livro Android Essencials</a><br><br>
 
-	]]>
 	</string>
     <string name="about_dialog_title">Livro Android</string>
 
@@ -28,7 +22,7 @@ Versao %s<br><br>
 
     <!-- E -->
     <string name="esportivos">Esportivos</string>
-    <string name="esportivo">Esportivos</string>
+    <string name="esportivo">Esportivo</string>
 
     <!-- F -->
     <string name="favoritos">Favoritos</string>
@@ -87,6 +81,10 @@ Versao %s<br><br>
     <string name="tipo">Tipo</string>
     <string name="ligarContato">Contato</string>
     <string name="compartilhar">Compartilhar</string>
+    <string name="nome_adriano">Adriano Ferreira Pinheiro - RM 330504</string>
+    <string name="nome_artur">Artur Ramos Ribeiro do Valle- RM 331611</string>
+    <string name="nome_kaique">Kaique da Costa Coqueiro - RM 331822</string>
+    <string name="versao_app">Versão - 1.0</string>
 
 
 </resources>
