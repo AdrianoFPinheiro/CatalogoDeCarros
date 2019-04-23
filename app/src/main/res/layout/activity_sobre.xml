@@ -12,11 +12,19 @@
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginBottom="100dp"
+            android:padding="12dp"
             android:background="@drawable/border"
             android:src="@drawable/ic_drawer_carro"
     />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:text="@string/carros"/>
 
     <TextView
             style="@style/TextoSobre"
@@ -26,6 +34,12 @@
     <TextView
             style="@style/TextoSobre"
             android:text="@string/nome_artur"
+
+    />
+
+    <TextView
+            style="@style/TextoSobre"
+            android:text="@string/nome_daniel"
 
     />
 
