@@ -23,6 +23,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "app"
+    productFlavors {
+        prod {
+            dimension "app"
+            buildConfigField "String", "BASE_URL", '"http://livrowebservices.com.br/rest/carros"'
+        }
+
+        dev {
+            dimension "app"
+            buildConfigField "String", "BASE_URL", '"http://livrowebservices.com.br/rest/carros"'
+        }
+    }
 }
 
 final retrofit_version = '2.3.0'
@@ -86,6 +99,9 @@ dependencies {
     implementation "com.google.firebase:firebase-database:$firebase_version"
     implementation "com.google.firebase:firebase-core:$firebase_version"
     implementation "com.google.firebase:firebase-storage:$firebase_version"
+
+    //DEBUG
+    implementation "com.facebook.stetho:stetho:$stetho"
 
     //RXJava 2.x
     implementation 'com.github.maxcruz:reactive-permissions:2.1'

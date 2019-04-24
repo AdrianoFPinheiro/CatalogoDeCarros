@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import br.com.adrianofpinheiro.trabalhokotlin.R
 import br.com.adrianofpinheiro.trabalhokotlin.domain.Usuario
+import br.com.adrianofpinheiro.trabalhokotlin.extensions.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_criar_conta.*
@@ -22,15 +23,20 @@ class CriarContaActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         btCreate.setOnClickListener {
-            mAuth.createUserWithEmailAndPassword(
-                inputEmail.text.toString(),
-                inputPassword.text.toString()
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    saveInRealTimeDatabase()
-                } else {
-                    Toast.makeText(this@CriarContaActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
+            if(!inputEmail.text.isNullOrEmpty() && !inputPassword.text.isNullOrEmpty()) {
+                mAuth.createUserWithEmailAndPassword(
+                    inputEmail.text.toString(),
+                    inputPassword.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        saveInRealTimeDatabase()
+                    } else {
+                        Toast.makeText(this@CriarContaActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
                 }
+            } else {
+                inputEmail.error = getString(R.string.msg_error_form_email)
+                inputPassword.error = getString(R.string.msg_error_form_password)
             }
         }
     }
@@ -42,13 +48,13 @@ class CriarContaActivity : AppCompatActivity() {
             .setValue(user)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
+                    toast(getString(R.string.msg_success))
                     val returnIntent = Intent(this@CriarContaActivity, LoginActivity::class.java)
                     returnIntent.putExtra("email", inputEmail.text.toString())
                     setResult(RESULT_OK, returnIntent)
                     finish()
                 } else {
-                    Toast.makeText(this, "Erro ao criar o Usuário", Toast.LENGTH_SHORT).show()
+                    toast(getString(R.string.msg_fail))
                 }
             }
     }

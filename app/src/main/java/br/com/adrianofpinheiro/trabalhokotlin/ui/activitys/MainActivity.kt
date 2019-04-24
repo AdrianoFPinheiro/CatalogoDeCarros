@@ -27,7 +27,7 @@ import com.maxcruz.reactivePermissions.ReactivePermissions
 import org.jetbrains.anko.*
 
 
-class MainActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     val REQUEST_CODE = 554
     val reacPermissions = ReactivePermissions(this, REQUEST_CODE)

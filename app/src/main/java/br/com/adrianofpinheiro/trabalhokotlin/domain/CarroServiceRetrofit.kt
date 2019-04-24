@@ -1,6 +1,8 @@
 package br.com.adrianofpinheiro.trabalhokotlin.domain
 
 import android.util.Base64
+import br.com.adrianofpinheiro.trabalhokotlin.BuildConfig
+import br.com.adrianofpinheiro.trabalhokotlin.BuildConfig.BASE_URL
 import br.com.adrianofpinheiro.trabalhokotlin.domain.retrofit.CarrosREST
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,7 +12,6 @@ import java.io.File
  * Implementação com Retrofit
  */
 object CarroServiceRetrofit {
-    private val BASE_URL = "http://livrowebservices.com.br/rest/carros/"
     private var service: CarrosREST
 
     init {

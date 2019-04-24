@@ -1,69 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.LoginActivity"
-        android:gravity="center"
-        android:layout_margin="50dp"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+            android:id="@+id/ivLogo"
+            android:src="@drawable/ic_drawer_carro"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginTop="200dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 
+    <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" android:id="@+id/textInputLayout">
 
-        <ImageView
-        android:id="@+id/ivLogo"
-        android:src="@drawable/ic_drawer_carro"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-
-        android:layout_gravity="center_horizontal"/>
-
-        <android.support.design.widget.TextInputLayout
+        <EditText
+                android:id="@+id/inputLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/inputLoginEmail"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:inputType="textEmailAddress"
-                      android:hint="@string/nome"/>
-        </android.support.design.widget.TextInputLayout>
+                android:inputType="textEmailAddress"
+                android:hint="@string/email"/>
+    </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+    <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" android:id="@+id/textInputLayout2">
+
+        <EditText
+                android:id="@+id/inputLoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/inputLoginPassword"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:inputType="textPassword"
-                      android:hint="@string/password"/>
-        </android.support.design.widget.TextInputLayout>
+                android:inputType="textPassword"
+                android:hint="@string/password"/>
+    </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="32dp"
-                android:padding="12dp"
-                android:text="@string/login"
-                android:textColor="#FFF"
-                android:background="?attr/colorPrimary"
-                android:textAlignment="center"
-                android:textSize="18sp"/>
+    <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="@string/login"
+            android:textColor="#FFF"
+            android:background="?attr/colorPrimary"
+            android:textAlignment="center"
+            android:textSize="18sp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"/>
 
-        <TextView android:id="@+id/btCriarConta"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="32dp"
-                  android:text="@string/criar_conta"
-                  android:gravity="center"
-                  android:textStyle="bold"
-                  android:textSize="16dp"/>
+    <TextView android:id="@+id/btCriarConta"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/criar_conta"
+              android:gravity="center"
+              android:textStyle="bold"
+              android:textSize="16dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+              android:layout_marginStart="8dp" android:layout_marginTop="15dp"
+              app:layout_constraintTop_toBottomOf="@+id/btLogin"
+    />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

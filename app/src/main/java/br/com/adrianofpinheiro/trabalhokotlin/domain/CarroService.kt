@@ -1,6 +1,7 @@
 package br.com.adrianofpinheiro.trabalhokotlin.domain
 
 import android.util.Base64
+import br.com.adrianofpinheiro.trabalhokotlin.BuildConfig.BASE_URL
 import br.com.adrianofpinheiro.trabalhokotlin.domain.dao.DatabaseManager
 import br.com.adrianofpinheiro.trabalhokotlin.extensions.fromJson
 import br.com.adrianofpinheiro.trabalhokotlin.extensions.toJson
@@ -13,8 +14,6 @@ import java.io.File
  * Implementação com OkHttp
  */
 object CarroService {
-    private val BASE_URL = "http://livrowebservices.com.br/rest/carros"
-
     // Busca os carros por tipo (clássicos, esportivos ou luxo)
     fun getCarros(tipo: TipoCarro): List<Carro> {
         val url = "$BASE_URL/tipo/${tipo.name}"
