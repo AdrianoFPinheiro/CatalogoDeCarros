@@ -2,16 +2,16 @@ package br.com.adrianofpinheiro.trabalhokotlin
 
 import android.support.multidex.MultiDexApplication
 import android.util.Log
+import com.facebook.stetho.Stetho
 import java.lang.IllegalStateException
 
 class CarrosApplication : MultiDexApplication() {
     private val TAG = "CarrosApplication"
 
-    // Chamado quando o Android criar o processo da aplicação
     override fun onCreate() {
         super.onCreate()
-        // Salva a instância para termos acesso como Singleton
         appInstance = this
+        this.debugConfigs()
     }
 
     companion object {
@@ -23,6 +23,12 @@ class CarrosApplication : MultiDexApplication() {
                 throw IllegalStateException("Configure a classe de Application no AndroidManifest.xml")
             }
             return appInstance!!
+        }
+    }
+
+    private fun debugConfigs() {
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this)
         }
     }
 

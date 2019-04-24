@@ -51,6 +51,9 @@
     <string name="msg_error_form_desc">Descrição é obrigatório</string>
     <string name="msg_confirma_logout">Deseja deslogar do aplicativo?</string>
 
+    <string name="msg_error_form_email">E-Mail é obrigatório</string>
+    <string name="msg_error_form_password">Senha é obrigatória</string>
+
     <!-- N -->
     <string name="nao">Não</string>
     <string name="nav_drawer_username">Ricardo Lecheta</string>
@@ -62,7 +65,9 @@
     <string name="ok">OK</string>
 
     <!-- P -->
+    <string name="email">E-Mail</string>
     <string name="password">Senha</string>
+    <string name="btn_create_user">Criar usuário</string>
 
     <!-- S -->
     <string name="site_do_livro">Site do Livro</string>
@@ -87,6 +92,10 @@
     <string name="versao_app">Versão - 1.0</string>
     <string name="novo_usuario">Novo usuário</string>
     <string name="nome_daniel">Daniel Macena Ideriba - RM 330285</string>
+
+    <!-- Toast msgs -->
+    <string name="msg_success">Usuário criado com sucesso</string>
+    <string name="msg_fail">Erro ao criar o Usuário</string>
 
 
 </resources>

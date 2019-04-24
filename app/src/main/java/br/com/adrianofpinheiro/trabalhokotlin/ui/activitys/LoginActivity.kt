@@ -30,15 +30,20 @@ class LoginActivity : AppCompatActivity() {
         }
         //tenta logar
         btLogin.setOnClickListener {
-            mAuth.signInWithEmailAndPassword(
-                inputLoginEmail.text.toString(),
-                inputLoginPassword.text.toString()
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    vaiParaLista()
-                } else {
-                    Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_LONG).show()
+            if(!inputLoginEmail.text.isNullOrEmpty() && !inputLoginPassword.text.isNullOrEmpty()) {
+                mAuth.signInWithEmailAndPassword(
+                    inputLoginEmail.text.toString(),
+                    inputLoginPassword.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        vaiParaLista()
+                    } else {
+                        Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_LONG).show()
+                    }
                 }
+            } else {
+                inputLoginEmail.error = getString(R.string.msg_error_form_email)
+                inputLoginPassword.error = getString(R.string.msg_error_form_password)
             }
         }
 
